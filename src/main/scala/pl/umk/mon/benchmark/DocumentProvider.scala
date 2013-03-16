@@ -12,8 +12,7 @@ class DocumentProvider(val columns: ContainerMap, val numberOfDocuments: Integer
     documents.append(generateDocument(columns))
   }
 
-  def documentsToInsert(): List[JsonMap] = { documents.toList }
-  def criteriasToSearch() = {}
+  def documentsToBeInserted(): List[JsonMap] = { documents.toList }
 
   def generateDocument(columns: ContainerMap): JsonMap = {
     columns.foldLeft(new JsonMap)(handleColumnTypes)

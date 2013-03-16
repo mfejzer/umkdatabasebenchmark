@@ -20,6 +20,6 @@ class DocumentProviderSuite extends FunSuite {
     val n = 10
     val cm = prepareContainerMap()
     val dp = new DocumentProvider(cm, n)
-    assert(dp.documentsToInsert().size === n)
+    assert(dp.documentsToBeInserted().size === n)
   }
 }

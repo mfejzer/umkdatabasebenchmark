@@ -1,4 +1,5 @@
 package pl.umk.mon.benchmark
+import scala.collection.JavaConversions._
 
 abstract class ColumnType
 case class NumericColumnType(val min: Integer,
@@ -11,5 +12,9 @@ case class SentenceColumnType(val verbs: List[String],
 //Doesn't work, illegal cyclic refercence ?
 
 //Workaround
-class ContainerMap extends java.util.HashMap[String, Either[ContainerMap,ColumnType]]
-class JsonMap extends java.util.HashMap[String, Either[JsonMap,String]]
+class ContainerMap extends java.util.HashMap[String, Either[ContainerMap, ColumnType]]
+class JsonMap extends java.util.HashMap[String, Either[JsonMap, String]]
+
+abstract class JsonCriteria
+//case class NumericCriteria(val name: String, val moreThan: Integer, val lessThan: Integer) extends JsonCriteria
+case class EqualCriteria(val name: String, val content: String) extends JsonCriteria
