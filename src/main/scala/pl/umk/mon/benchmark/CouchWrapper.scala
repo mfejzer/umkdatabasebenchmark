@@ -39,8 +39,8 @@ class CouchWrapper(val database:String) extends Wrapper {
   private def translate(x: JsonCriteria): String = {
     x match {
 //      case NumericCriteria(n, m, l) => { (?????) }
-//      case EqualCriteria(n, w) => { n+":"+w }
-      case EqualCriteria(n, w) => { w }
+      case EqualCriteria(n, w) => { n+":"+w }
+//      case EqualCriteria(n, w) => { w }
     }
   }
   
